@@ -8,9 +8,5 @@ struct Particle
     int id;
     Particle(int id, const Vec3& pos, const Vec3& vel, double m)
         : id(id), position(pos), velocity(vel), mass(m), force(0.0, 0.0, 0.0) {}
-
-    void clearForce() {
-        force = Vec3(0.0, 0.0, 0.0);
-    }
 };
 #endif

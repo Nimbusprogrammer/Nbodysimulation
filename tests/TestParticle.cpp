@@ -24,22 +24,6 @@ void testParticleConstruction() {
     std::cout << "[PASS] Particle construction\n";
 }
 
-void testClearForce() {
-    Particle p(0, Vec3(0,0,0), Vec3(0,0,0), 1.0);
-
-    // Simulate accumulated force
-    p.force = Vec3(10.0, 20.0, 30.0);
-    assert(p.force.x == 10.0);
-
-    // Clear it
-    p.clearForce();
-    assert(p.force.x == 0.0);
-    assert(p.force.y == 0.0);
-    assert(p.force.z == 0.0);
-
-    std::cout << "[PASS] clearForce()\n";
-}
-
 void testForceAccumulation() {
     Particle p(0, Vec3(0,0,0), Vec3(0,0,0), 1.0);
 
@@ -74,7 +58,6 @@ int main() {
     std::cout << "=== Particle Tests ===\n";
 
     testParticleConstruction();
-    testClearForce();
     testForceAccumulation();
     testMultipleParticles();
 
