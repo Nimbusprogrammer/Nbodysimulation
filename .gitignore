@@ -47,6 +47,9 @@ build/
 # IDE files
 .idea/
 
+# Project snapshot (local only)
+PROJECT_SNAPSHOT.md
+
 # System files
 .DS_Store
 
