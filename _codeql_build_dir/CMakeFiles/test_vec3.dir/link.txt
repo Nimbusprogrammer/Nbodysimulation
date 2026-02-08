@@ -1,0 +1,1 @@
+/home/runner/work/Nbodysimulation/.codeql-scratch/dbs/cpp/working/autobuild/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test_vec3.dir/link.d CMakeFiles/test_vec3.dir/tests/TestVec3.cpp.o -o test_vec3
