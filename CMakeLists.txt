@@ -24,8 +24,13 @@ target_include_directories(test_particle PRIVATE ${CMAKE_SOURCE_DIR}/src)
 add_executable(test_logger tests/TestLogger.cpp)
 target_include_directories(test_logger PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
+# Test for Integrator
+add_executable(test_integrator tests/TestIntegrator.cpp)
+target_include_directories(test_integrator PRIVATE ${CMAKE_SOURCE_DIR}/src)
+
 # Enable testing
 enable_testing()
 add_test(NAME Vec3Test COMMAND test_vec3)
 add_test(NAME ParticleTest COMMAND test_particle)
 add_test(NAME LoggerTest COMMAND test_logger)
+add_test(NAME IntegratorTest COMMAND test_integrator)
