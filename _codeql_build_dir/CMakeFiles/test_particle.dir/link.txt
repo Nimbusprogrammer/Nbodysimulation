@@ -1,1 +1,0 @@
-/home/runner/work/Nbodysimulation/.codeql-scratch/dbs/cpp/working/autobuild/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test_particle.dir/link.d CMakeFiles/test_particle.dir/tests/TestParticle.cpp.o -o test_particle
