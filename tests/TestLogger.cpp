@@ -3,8 +3,8 @@
 #include <sstream>
 #include <iostream>
 #include <vector>
-#include "../src/core/Particle.h"
-#include "../src/utils/Logger.h"
+#include "core/Particle.h"
+#include "utils/Logger.h"
 
 void testWriteHeader() {
     std::ofstream file("/tmp/test_header.csv");

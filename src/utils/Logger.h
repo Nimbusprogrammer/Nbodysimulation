@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <fstream>
-#include "../core/Particle.h"
+#include "core/Particle.h"
 
 inline void writeHeader(std::ofstream& file)
 {

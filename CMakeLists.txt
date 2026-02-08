@@ -10,6 +10,7 @@ set(SOURCES
 )
 
 add_executable(nbody_sim ${SOURCES})
+target_include_directories(nbody_sim PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
 # Test executable for Vec3
 add_executable(test_vec3 tests/TestVec3.cpp)
