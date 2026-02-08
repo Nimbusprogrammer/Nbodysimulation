@@ -27,4 +27,8 @@ public:
     }
 };
 
+<<<<<<< HEAD
 #endif // FORWARD_EULER_H
+=======
+#endif // FORWARD_EULER_H
+>>>>>>> copilot/complete-n-body-simulation-engine

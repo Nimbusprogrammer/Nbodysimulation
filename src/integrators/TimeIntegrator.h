@@ -2,7 +2,11 @@
 #define TIME_INTEGRATOR_H
 
 #include <vector>
+<<<<<<< HEAD
 #include "../core/Particle.h"
+=======
+#include "core/Particle.h"
+>>>>>>> copilot/complete-n-body-simulation-engine
 
 // Abstract Base Class
 class TimeIntegrator {
@@ -14,4 +18,8 @@ public:
     virtual void integrate(std::vector<Particle>& particles, double dt) = 0;
 };
 
+<<<<<<< HEAD
 #endif // TIME_INTEGRATOR_H
+=======
+#endif // TIME_INTEGRATOR_H
+>>>>>>> copilot/complete-n-body-simulation-engine

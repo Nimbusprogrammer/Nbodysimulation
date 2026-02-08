@@ -10,6 +10,7 @@ set(SOURCES
 )
 
 add_executable(nbody_sim ${SOURCES})
+target_include_directories(nbody_sim PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
 # Test executable for Vec3
 add_executable(test_vec3 tests/TestVec3.cpp)
@@ -19,6 +20,13 @@ target_include_directories(test_vec3 PRIVATE ${CMAKE_SOURCE_DIR}/src)
 add_executable(test_particle tests/TestParticle.cpp)
 target_include_directories(test_particle PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
+<<<<<<< HEAD
+=======
+# Test executable for Logger
+add_executable(test_logger tests/TestLogger.cpp)
+target_include_directories(test_logger PRIVATE ${CMAKE_SOURCE_DIR}/src)
+
+>>>>>>> copilot/complete-n-body-simulation-engine
 # Test for Integrator
 add_executable(test_integrator tests/TestIntegrator.cpp)
 target_include_directories(test_integrator PRIVATE ${CMAKE_SOURCE_DIR}/src)
@@ -27,4 +35,8 @@ target_include_directories(test_integrator PRIVATE ${CMAKE_SOURCE_DIR}/src)
 enable_testing()
 add_test(NAME Vec3Test COMMAND test_vec3)
 add_test(NAME ParticleTest COMMAND test_particle)
+<<<<<<< HEAD
+=======
+add_test(NAME LoggerTest COMMAND test_logger)
+>>>>>>> copilot/complete-n-body-simulation-engine
 add_test(NAME IntegratorTest COMMAND test_integrator)
