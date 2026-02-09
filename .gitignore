@@ -49,11 +49,13 @@ _codeql_detected_source_root
 # IDE files
 .idea/
 
-# Project snapshot (local only)
-PROJECT_SNAPSHOT.md
-
 # System files
 .DS_Store
 
-# Project specific
+# Simulation data (generated output)
+data/
+
+# Temporary documentation
+PROJECT_SNAPSHOT.md
 contextdocument.md
+
