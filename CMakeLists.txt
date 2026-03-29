@@ -28,9 +28,14 @@ target_include_directories(test_logger PRIVATE ${CMAKE_SOURCE_DIR}/src)
 add_executable(test_integrator tests/TestIntegrator.cpp)
 target_include_directories(test_integrator PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
+# Test for Energy conservation (Leapfrog vs Forward Euler)
+add_executable(test_energy tests/TestEnergy.cpp)
+target_include_directories(test_energy PRIVATE ${CMAKE_SOURCE_DIR}/src)
+
 # Enable testing
 enable_testing()
-add_test(NAME Vec3Test COMMAND test_vec3)
-add_test(NAME ParticleTest COMMAND test_particle)
-add_test(NAME LoggerTest COMMAND test_logger)
-add_test(NAME IntegratorTest COMMAND test_integrator)
+add_test(NAME Vec3Test        COMMAND test_vec3)
+add_test(NAME ParticleTest    COMMAND test_particle)
+add_test(NAME LoggerTest      COMMAND test_logger)
+add_test(NAME IntegratorTest  COMMAND test_integrator)
+add_test(NAME EnergyTest      COMMAND test_energy)
