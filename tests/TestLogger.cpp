@@ -1,4 +1,5 @@
 #include <cassert>
+#include <filesystem>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -6,12 +7,18 @@
 #include "core/Particle.h"
 #include "utils/Logger.h"
 
+// Use std::filesystem::temp_directory_path() for cross-platform temp files.
+static std::string tmpPath(const std::string& filename) {
+    return (std::filesystem::temp_directory_path() / filename).string();
+}
+
 void testWriteHeader() {
-    std::ofstream file("/tmp/test_header.csv");
+    const std::string path = tmpPath("test_header.csv");
+    std::ofstream file(path);
     writeHeader(file);
     file.close();
 
-    std::ifstream in("/tmp/test_header.csv");
+    std::ifstream in(path);
     assert(in.is_open());
     std::string line;
     std::getline(in, line);
@@ -26,12 +33,13 @@ void testLogState() {
     particles.emplace_back(0, Vec3(1.0, 2.0, 3.0), Vec3(0.1, 0.2, 0.3), 5.0);
     particles.emplace_back(1, Vec3(4.0, 5.0, 6.0), Vec3(0.4, 0.5, 0.6), 10.0);
 
-    std::ofstream file("/tmp/test_log.csv");
+    const std::string path = tmpPath("test_log.csv");
+    std::ofstream file(path);
     writeHeader(file);
     logState(particles, 0.0, file);
     file.close();
 
-    std::ifstream in("/tmp/test_log.csv");
+    std::ifstream in(path);
     assert(in.is_open());
     std::string line;
 
@@ -53,13 +61,14 @@ void testLogStateMultipleTimes() {
     std::vector<Particle> particles;
     particles.emplace_back(0, Vec3(0, 0, 0), Vec3(1, 0, 0), 1.0);
 
-    std::ofstream file("/tmp/test_log_multi.csv");
+    const std::string path = tmpPath("test_log_multi.csv");
+    std::ofstream file(path);
     writeHeader(file);
     logState(particles, 0.0, file);
     logState(particles, 1.0, file);
     file.close();
 
-    std::ifstream in("/tmp/test_log_multi.csv");
+    std::ifstream in(path);
     assert(in.is_open());
     std::string line;
     int count = 0;
