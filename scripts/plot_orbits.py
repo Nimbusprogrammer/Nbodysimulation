@@ -152,7 +152,7 @@ def make_orbit_animation(bodies, particle_ids, n_frames, out_path):
         frames=n_frames, interval=25, blit=True, repeat=True
     )
 
-    print(f"Saving animation ({n_frames} frames) → {out_path}")
+    print(f"Saving animation ({n_frames} frames) -> {out_path}")
     print("  This may take 30–60 seconds ...")
     try:
         anim.save(out_path, writer='pillow', fps=30)
